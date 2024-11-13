@@ -2,6 +2,7 @@ import AppGradient from "@/components/AppGradient";
 import { MEDITATION_DATA } from "@/constants/MeditationData";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { FlatList, ImageBackground, Pressable, Text, View } from "react-native";
@@ -28,7 +29,7 @@ const NatureMeditate = () => {
             renderItem={({ item }) => (
               <Pressable
                 onPress={() => {
-                  console.log("Press!!");
+                  router.push(`/meditate/${item.id}`);
                 }}
                 className="h-48 my-3 rounded-md overflow-hidden"
               >
